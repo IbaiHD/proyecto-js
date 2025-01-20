@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="media/images/favicon.ico">
+  <title>Moon Invaders</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div id="menu">
+    <h3 id="titulo">Moon Invaders</h3>
+    <input id="play" class="pulsar" type="button" value="JUGAR" onclick="jugar()">
+    <input id="instrucciones" class="pulsar" type="button" value="INSTRUCCIONES" onclick="">
+    <input id="configuracion" class="pulsar" type="button" value="DIFICULTAD" onclick="mostrarDificultad()">
+  </div>
+
+  <div id="selector_dificultad">
+    <h3 id="titulo">Selector de Dificultad</h3>
+    <input id="easy" class="pulsar" type="button" value="Fácil" onclick="facil()">
+    <input id="medium" class="pulsar" type="button" value="Normal" onclick="normal()">
+    <input id="hard" class="pulsar" type="button" value="Dificil" onclick="dificil()">
+    <input id="cerrar" class="pulsar" type="button" value="X" onclick="menu()">
+  </div>
+
+  <canvas id="juegoCanvas" width="800" height="640"></canvas>
+  <script src="main.js"></script>
+</body>
+</html>
