@@ -1,0 +1,167 @@
+canvas {
+    display: block;
+    margin: auto;
+    padding: auto;
+    border: 3px solid black;
+    border-radius:10%;
+    background-image: url("media/images/game_background.jpg");
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index:1;
+  }
+
+body {
+    font-family: "ＭＳ Ｐゴシック";
+    margin:0 !important;
+    padding: 0 !important;
+    background: url("media/images/html_background.jpg");
+    background-size: 100%;
+    min-height:100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input{
+    font-family: "ＭＳ Ｐゴシック";
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid grey;
+    background-color: ghostwhite;
+}
+
+
+#menu {
+    display: block;
+    width: 800px;
+    height: 640px;
+    margin: auto;
+    padding: auto;
+    border: 3px solid white;
+    border-radius:10%;
+    background: url("media/images/menu_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index:5;
+}
+
+#instrucciones {
+    display: block;
+    width: 800px;
+    height: 640px;
+    margin: auto;
+    padding: auto;
+    border: 3px solid white;
+    border-radius:10%;
+    background: url("media/images/menu_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index:4;
+}
+
+
+#selector_dificultad {
+    display: block;
+    width: 800px;
+    height: 640px;
+    margin: auto;
+    padding: auto;
+    border: 3px solid white;
+    border-radius:10%;
+    background: url("media/images/menu_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index:3;
+}
+
+#pantalla_victoria{
+    display: none;
+    background: url("media/images/pantalla_victoria.png");
+    background-repeat: no-repeat;
+    background-size: 800px 640px;
+}
+
+#pantalla_derrota{
+    display: none;
+    background: url("media/images/pantalla_victoria.png");
+    background-repeat: no-repeat;
+    background-size: 800px 640px;
+}
+
+.posicion_derrota_victoria{
+    position:absolute;
+    margin-left:260px;
+    margin-top:-30px;
+}
+
+.estadisticas{
+    margin-left:35px;
+    margin-top: 20px;
+    font-size: 20px;
+    width:800px;
+    height:400px;
+}
+
+.fin_de_juego {
+    display: block;
+    width: 800px;
+    height: 640px;
+    margin: auto;
+    padding: auto;
+    border: 3px solid white;
+    border-radius:10%;
+    position: absolute;
+    z-index:2;
+}
+
+#titulo{
+    font-family: "ＭＳ Ｐゴシック";
+    width:270px;
+    color:white;
+    font-size: 40px;
+    text-decoration: underline;
+    margin:100px 50px 0px 20px;
+    transition-duration:1000ms;
+}
+
+#titulo:hover{
+    transform: rotate(360deg);
+}
+
+#play {
+    display:block;
+    width: 200px;
+    height: 80px;
+    margin: 50px 50px 20px 20px;
+}
+
+#boton_instrucciones {
+    display:block;
+    width: 200px;
+    height: 80px;
+    margin: 50px 50px 20px 20px;
+}
+
+#boton_configuracion {
+    display:block;
+    width: 200px;
+    height: 80px;
+    margin: 50px 50px 20px 20px;
+}
+
+.pulsar{
+    transition-duration: 100ms;
+}
+
+.pulsar:hover{
+    background-color:lightgray;
+    transform: scale(1.1);
+}
+
+.pulsar:active{
+    background-color:darkgrey;
+    color:white;
+    transform: scale(1.05);
+}
