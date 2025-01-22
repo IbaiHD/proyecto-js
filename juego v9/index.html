@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="media/images/favicon.ico">
+  <title>Moon Invaders</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="menu">
+    <h3 id="titulo" class="girito">Moon Invaders</h3>
+    <input id="play" class="pulsar boton" type="button" value="JUGAR" onclick="jugar()">
+    <input id="boton_instrucciones" class="pulsar boton" type="button" value="INSTRUCCIONES" onclick="mostrarInstrucciones()">
+    <input id="boton_configuracion" class="pulsar boton" type="button" value="DIFICULTAD" onclick="mostrarDificultad()">
+  </div>
+
+  <div id="selector_dificultad">
+    <h3 id="titulo">Dificultad</h3>
+    <input id="cerrar" class="pulsar cerrar" type="button" value="X" onclick="menu()">
+    <input id="easy" class="pulsar boton" type="button" value="Fácil" onclick="facil()">
+    <input id="medium" class="pulsar boton" type="button" value="Normal" onclick="normal()">
+    <input id="hard" class="pulsar boton" type="button" value="Dificil" onclick="dificil()">
+    <div id="easy_text" class="dificultad_bubble">
+      <p>¡La dificultad más sencilla!</p>
+      <p><ul>
+        <li>Menos enemigos Tanques</li>
+        <li>Menos proyectiles</li>
+        <li>Proyectiles más lentos</li>
+        <li>Llega antes al jefe</li>
+      </ul></p>
+    </div>
+    <div id="medium_text" class="dificultad_bubble">
+      <p>¡Tal como Dios lo quiso!</p>
+      <p><ul>
+        <li>Más enemigos Tanques</li>
+        <li>Proyectiles más rapidos</li>
+        <li>El jefe no está lejos</li>
+        <li>Más proyectiles</li>
+      </ul></p>
+    </div>
+
+    <div id="hard_text" class="dificultad_bubble">
+      <p>¡Dificil-cultad aumentada!</p>
+      <p><ul>
+        <li>Muchos enemigos Tanques</li>
+        <li>Proyectiles muy rapidos</li>
+        <li>El jefe está lejos</li>
+        <li>Más++ proyectiles</li>
+      </ul></p>
+    </div>
+  </div>
+
+  
+  <div id="instrucciones">
+    <h3 id="titulo">Tutorial</h3>
+    <input id="cerrar" class="pulsar cerrar" type="button" value="X" onclick="menu()">
+    <div id="tutorial_1" class="tutorial_bubble"></div>
+    <div id="tutorial_2" class="tutorial_bubble"></div>
+    <div id="tutorial_3" class="tutorial_bubble"></div>
+  </div>
+
+  <div id="pantalla_derrota" class="fin_de_juego">
+    <h3 id="titulo">Has perdido</h3>
+    <input id="cerrar" class="pulsar posicion_derrota_victoria" type="button" value="X" onclick="menu()">
+    <div id="estadisticas_derrota" class="estadisticas"></div>
+  </div>
+
+  <div id="pantalla_victoria" class="fin_de_juego">
+    <h3 id="titulo">Has ganado</h3>
+    <input id="cerrar" class="pulsar posicion_derrota_victoria" type="button" value="X" onclick="menu()">
+    <div id="estadisticas_victoria" class="estadisticas"></div>
+  </div>
+
+  <canvas id="juegoCanvas" width="800" height="640"></canvas>
+  <script src="main.js"></script>
+</body>
+</html>
