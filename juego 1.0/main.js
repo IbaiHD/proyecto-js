@@ -394,16 +394,46 @@ function disparoEnemigo(enemigos){ // función para determinar si un enemigo dis
 }
 
 function disparoColumna(enemigo){
+	let proyectilenemigo = {
+		width: 5,
+		height: 15,
+		x: enemigo.x + (Math.floor(Math.random()*enemigo.width)) ,
+		y: enemigo.y,
+		yspeed: (canvas.height)/70,
+		xspeed: 0,
+		color: "orange",
+	};
+	proyectilesenemigos.push(proyectilenemigo);
+}
+
+function disparoLateral(){
+	let probdisparo = 0.005;
+	if(Math.random() <= probdisparo){
+		if(jugador.x > (canvas.width/2)){
 			let proyectilenemigo = {
-				width: 5,
-				height: 15,
-				x: enemigo.x + (Math.floor(Math.random()*enemigo.width)) ,
-				y: enemigo.y,
-				yspeed: (canvas.height)/70,
-				xspeed: 0,
-				color: "orange",
+				width: 15,
+				height: 5,
+				x: 0,
+				y: Math.floor(Math.random()*canvas.height),
+				yspeed: 1,
+				xspeed: (canvas.width)/110,
+				color: "brown",
 			};
 			proyectilesenemigos.push(proyectilenemigo);
+		}else{
+			let proyectilenemigo = {
+				width: 15,
+				height: 5,
+				x: canvas.width,
+				y: Math.floor(Math.random()*canvas.height),
+				yspeed: 1,
+				xspeed: -(canvas.width)/110,
+				color: "brown",
+			};
+			proyectilesenemigos.push(proyectilenemigo);
+		}
+
+	}
 }
 
 function dropEnemigo(enemigo){
@@ -443,7 +473,7 @@ function moverDrops(drops){
 					jugador.cadencia = jugador.cadenciarecogida > 10 ? jugador.cadencia : jugador.cadencia - (60 - (jugador.cadenciarecogida*5));
 					break;
 				case ("blue"):
-					speedBoost();
+					if (!speedboost) speedBoost();
 					break;
 				case ("pink"):
 					widthrecogido++;
@@ -636,6 +666,8 @@ function main() {
 	moverDrops(drops);
 	moverFondo();	
 
+	if (disparolateral) disparoLateral();
+
 	if (puntos >= puntosparaboss) crearBoss();
 
 	// Dibujar puntuación
@@ -673,7 +705,7 @@ let boton_click_music = audioCreate("media/sounds/boton_click.mp3");
 let speedboost_music = audioCreate("media/sounds/speed_boost_music.mp3");
 let boss_defeat_music = audioCreate("media/sounds/boss_defeat_music.mp3");
 proyectil_jugador_music.volume = 0.15*volumentotal;	
-player_hit_music.volume = 0.3*volumentotal;
+player_hit_music.volume = 0.25*volumentotal;
 victoria_music.volume = 0.4*volumentotal;
 
 function audioCreate(archivo){
@@ -705,7 +737,7 @@ function controlarVolumen(){
 	lvl_music.volume = volumentotal;
 	boss_music.volume = volumentotal;
 	proyectil_jugador_music.volume = 0.15*volumentotal;	
-	player_hit_music.volume = 0.3*volumentotal;
+	player_hit_music.volume = 0.25*volumentotal;
 	victoria_music.volume = 0.4*volumentotal;
 	derrota_music.volume = volumentotal;
 	boton_click_music.volume = volumentotal;
